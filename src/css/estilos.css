@@ -1,0 +1,226 @@
+html{
+    color: #fff;
+    scroll-behavior: smooth;
+
+}
+
+body{
+    
+    font-family: 'Poppins', sans-serif;    /*muda a letra*/
+    margin: 0 auto;  /*margem do conteudo, 0 em cima e em baixo, auto a esquerda e direita*/
+    max-width: 1120px; 
+    /*mete o fundo do incio em preto e depois vai ficando roxo*/
+    background: linear-gradient(150deg, black, #9443d8);
+    background-size: 120% 120%;
+}
+
+.cabecalho{
+    display: flex;   /*altera o texto para os lados*/
+    justify-content: space-between;   /*espacamento entre as div's*/
+    align-items: center;   /*centraliza verticalmente*/
+    padding: 30px 15px;
+}
+
+.cabecalho .logo/* quero estilizar o elemento logo que esta dentro do cabecalho*/{
+    
+    width: 65px;
+    height: 65px;
+    border-radius: 50%; /*deixa redondo o logo*/
+    border: 2px solid #fff; /* 2px- tamanho em pixel / solid- é o tipo de borda*/
+    text-decoration: underline; 
+    text-align:center; 
+    line-height: 55px; /* mete ao centro o texto dentro da bola*/
+    font-family: 'Raleway', sans-serif;
+    transition: 0.2s;
+}
+
+.cabecalho a:hover .logo /*a: - quer dizer que quando o user passar o rato em cima do logo faz alguma coisa, ele muda de cor as iniciais*/{
+    color: #9443d8;
+    border: 2px solid #9443d8;  
+}
+
+.cabecalho .menu li a{
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    transition: 0.2s;
+}
+
+.cabecalho .menu li a:hover{
+    background-color: #9443d8;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.home{
+    display: flex;
+    min-height: calc(100vh - 125px); /*altura da  janela, calc= calcular  a altura "100vh menos 125 que é a altura do menu7cabecalho*/
+    align-items: center;
+    gap: 50px; /* separacao entre elemento */   
+    justify-content: space-between;
+}
+
+.home .informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 2px;
+    padding: 0 15px;
+    max-width: 60%;
+    
+}
+
+.home .informacoes h1{
+    font-family: 'raleway', sans-serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.home .informacoes p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.home .redes-sociais{
+    display: flex;
+    gap: 20px;
+    
+}
+
+.home .redes-sociais a i{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    font-size: 26px;
+    transition: 0,3s;
+}
+
+.home .redes-sociais a i:hover{
+    color: #9443d8;
+    border: 1px solid #9443d8;
+    transform: scale(1.1); /* aumentar o tamanho ao passar o rato*/
+}
+
+.home .container-foto .foto{
+    max-width: 450px;
+    border-radius: 100%;
+    
+}
+
+.home .container-foto img{
+    width: 500px;
+    border-radius: 50%; 
+    
+
+}
+
+.home .foto.sombra-interna{
+    background: linear-gradient(to right, #9443d8, #a7b86b, #dfded1);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
+}
+
+.projetos{
+    padding: 70px 0;
+}
+
+.projetos .titulo{
+    text-align: center;
+    padding: 60px 0;
+    font-size: 45px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.projetos .container-projeto{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.projetos .container-projeto .projeto{
+    max-width: 260px;
+    max-height: 500px;
+    position: relative;
+    display: none;
+}
+
+.projetos .projeto.ativo{
+    display: block;
+}
+
+.projeto .projeto img{
+    height: 100%;
+}
+
+.projetos .projeto h3{
+    background-color: #040203;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: absolute;
+    top: 0; /*posicao do texto acima das imagens*/
+}
+
+.projetos .projeto .informacoes-projeto{
+    background-color: #040203;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.3s;
+    padding: 20px;
+}
+
+/*quando passar o rato por cima da div projeto ele aparece levemente*/
+.projetos .container-projeto .projeto:hover .informacoes-projeto{
+    opacity: 0.7;
+    background-color: black;
+}
+
+.projetos .btn-mostrar-projetos{
+    background: none;
+    border: 1px solid white;
+    border-radius: 16px;
+    color: white;
+    width: 180px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.projetos .btn-mostrar-projetos:hover{
+    background-color: #9443d8;
+    transition: 0.3s;    
+}
+
+.projetos .btn-mostrar-projetos.remover{
+    display: none;
+}
+
+/*animação que é feita no background-color da foto*/
+@keyframes gradient-animation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}

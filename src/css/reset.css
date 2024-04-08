@@ -1,0 +1,22 @@
+*{
+    margin: 0; /* espacamento externo*/
+    padding: 0; /*espacento interno*/
+    border: none;
+    outline: none;
+    box-sizing: 
+    border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%; /*largura máxima*/
+    
+}
